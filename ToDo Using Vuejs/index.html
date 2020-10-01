@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Todo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="todoapp">
+      <h4>{{message}}</h4>
+      <form v-on:submit.prevent="addTodo">
+        <input type="text" id="todo" v-model="newTodo" placeholder="Add todo" />
+        <button type="submit">Add</button>
+      </form>
+      <ul>
+        <li v-for="todo in TodoList" v-bind:key="todo.id">
+          {{todo.text}}
+          <button v-if="!todo.completed" type="button" @click="doTodo(todo)">
+            Done
+          </button>
+          <button v-on:click="deleteTodo(todo)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#todoapp",
+      data: {
+        message: "Todo App",
+        TodoList: [],
+        newTodo: "",
+        noTodo: false,
+      },
+      methods: {
+        addTodo() {
+          var newTodo = this.$data.newTodo;
+          if (!this.newTodo) {
+            this.noTodo = true;
+            return;
+          }
+          this.noTodo = false;
+          this.TodoList.push({
+            id: Math.random(),
+            text: newTodo,
+            completed: false,
+          });
+          this.newTodo = "";
+        },
+        doTodo(todo) {
+          var index = this.TodoList.findIndex((item) => {
+            return item.id == todo.id;
+          });
+          this.TodoList[index].completed = true;
+        },
+        deleteTodo(todo) {
+          var index = this.TodoList.findIndex((item) => {
+            return item.id == todo.id;
+          });
+          this.TodoList.splice(index, 1);
+        },
+      },
+    });
+  </script>
+</html>
