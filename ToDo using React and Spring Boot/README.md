@@ -1,5 +1,12 @@
 # ToDo : Your Personal Project Management Tool
 
+## Resources:
+- React Tutorial by Codevolution YouTube Channel.
+- React & Redux Tutorial by Codevolution Youtube Channel.
+- Spring Security + JWT by JAVA Brains 
+- Spring Boot Tutorial By Telusko Channel.
+
+
 ## How To Setup this Project
 ### For Spring Backend
 - Install JDK in your machine.
