@@ -32,7 +32,7 @@
 
     text-align: center;
     padding: 3%;
-    background: lightslategray;
+    background: peru;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),
                 0 6px 20px 0 rgba(0,0,0,0.36);
@@ -52,31 +52,12 @@
   {% endif %}
 
   <center class="row">
-    <h1><i>__TODO LIST__</i></h1>
+    <h1><i>TODO LIST⌛⌛</i></h1>
     <hr />
   </center>
 
   <div class="row">
 
-    <div class="col-md-8">
-
-      {% for i in list %}
-      <div class="card">
-        <center><b>{{i.title}}</b></center>
-        <hr/>
-        {{i.date}}
-        <hr/>
-        {{i.details}}
-        <br />
-        <br />
-        <form action="/del/{{i.id}}" method="POST" style=" padding-right: 4%; padding-bottom: 3%;">
-          {% csrf_token %}
-          <button value="remove" type="submit"  class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span> &nbsp; remove</button>
-        </form>
-      </div>
-      {% endfor%}
-    </div>
-    <div class="col-md-1"> </div>
     <div class="col-md-3" >
       <div  class="submit_form">
       <form  method="POST">
@@ -86,7 +67,26 @@
         <input type="submit" class="btn btn-default" value="submit" />
       </center>
       </form>
+      </div>
     </div>
+    <div class="col-md-1"> </div>
+  <div class="col-md-8">
+
+    {% for i in list %}
+    <div class="card">
+      <center><b>{{i.title}}</b></center>
+      <hr/>
+      {{i.date}}
+      <hr/>
+      {{i.details}}
+      <br/>
+      <br/>
+      <form action="/del/{{i.id}}" method="POST" style=" padding-right: 4%; padding-bottom: 3%;">
+        {% csrf_token %}
+        <button value="remove" type="submit"  class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span> &nbsp; remove</button>
+      </form>
+    </div>
+    {% endfor%}
   </div>
 </div>
 </body>
