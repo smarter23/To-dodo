@@ -20,4 +20,8 @@ To know more visit [this link.](https://django-crispy-forms.readthedocs.io/en/la
 1. Clone and cd into this directory.
 2. Run the following command.
 
-<code> ~/$ python3 manage.py runserver</code>
+<code> ~/$ python3 manage.py runserver </code>
+
+# Tutorials
+-   [Medium](https://medium.com/fbdevclagos/how-to-build-a-todo-app-with-django-17afdc4a8f8c)
+-   [GFG](https://www.geeksforgeeks.org/python-todo-webapp-using-django/)
