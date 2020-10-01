@@ -18,6 +18,7 @@ $("ul").on("click" , "span" , function(e){
         $(this).val("");
         $("ul").append("<li><span><i class='fa fa-trash'></i></span> "+todoText+"</li>");
          
+        console.log('appended')
      }
  });
 

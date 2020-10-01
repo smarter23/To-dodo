@@ -3,7 +3,7 @@
     margin:100px auto;
     background: #f7f7f7;
     box-shadow: 0 0 3px rgba(0,0,0,0.1);
-
+    max-width: 90%;
 }
 body{
     font-family: Roboto;
@@ -65,10 +65,12 @@ li:hover span{
     width:40px;
     opacity:1.0;
 }
+li:hover, .fa-plus:hover{
+    cursor: pointer;
+}
 .fa-plus{
     float:right;
 }
-
 .done{
     color: gray;
     text-decoration: line-through;
