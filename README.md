@@ -7,7 +7,7 @@ List of resources - tutorials/blogs used to build the todo list.
 
 
 # Contributing
-
+Check out the [Contributing.md](/CONTRIBUTING.md) to find out how you can contribute
 
 # Goal 
 The goal for this repository is to be a resource pool of all sorts Todo lists, written to learn or unlearn a language.
